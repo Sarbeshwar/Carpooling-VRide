@@ -1,24 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import EmbeddedVideo from './components/EmbeddedVideo';
+import Login from './components/Login';
+import { BrowserRouter, Route } from 'react-router-dom';
+import SignUp from './components/SignUp';
+import Share from './components/Share';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+        <Route exact path="/Login">
+          <Login />
+        </Route>
+        <Route exact path="/">
+          <Header />
+          <EmbeddedVideo />
+        </Route>
+        <Route exact path="/Signup">
+          <SignUp></SignUp>
+        </Route>
+        <Route exact path="/Share">
+          <Share></Share>
+        </Route>
+      </BrowserRouter>
     </div>
   );
 }
