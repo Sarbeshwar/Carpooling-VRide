@@ -20,6 +20,7 @@ class Header extends Component {
                             <Nav.Link><Link to="/Login">Login</Link></Nav.Link>
                             <Nav.Link><Link to="/Signup">Signup</Link></Nav.Link>
                             <Nav.Link><Link to="/Share">Share Your Vehicle</Link></Nav.Link>
+                            <Nav.Link><Link to="/Team">Our Team</Link></Nav.Link>
                             <Nav.Link>Available Database</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>

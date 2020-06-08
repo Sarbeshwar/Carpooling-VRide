@@ -7,7 +7,8 @@ import Login from './components/Login';
 import { BrowserRouter, Route } from 'react-router-dom';
 import SignUp from './components/SignUp';
 import Share from './components/Share';
-
+import Footer from './components/Footer';
+import Team from './components/Team';
 function App() {
   return (
     <div>
@@ -25,7 +26,11 @@ function App() {
         <Route exact path="/Share">
           <Share></Share>
         </Route>
+        <Route exact path="/Team">
+          <Team></Team>
+        </Route>
       </BrowserRouter>
+      <Footer></Footer>
     </div>
   );
 }
