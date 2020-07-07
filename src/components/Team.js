@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import Header from './Header';
-
 class Team extends Component {
     render() { 
         return (
-            <div>  
-            <Header></Header>
+            <div>
             <section class="text-gray-700 body-font">
   <div class="container px-5 py-24 mx-auto">
     <div class="flex flex-col text-center w-full mb-20">
@@ -17,7 +14,7 @@ class Team extends Component {
         <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
           <div class="flex-grow sm:pl-8">
             <h2 class="title-font font-medium text-lg text-gray-900">Sarbeshwar Singh</h2>
-            <h3 class="text-gray-500 mb-3">Frontend Developer</h3>
+            <h3 class="text-gray-500 mb-3">Frontend</h3>
             <span class="inline-flex">
               <a class="text-gray-500">
                 <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
@@ -42,7 +39,7 @@ class Team extends Component {
         <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
           <div class="flex-grow sm:pl-8">
             <h2 class="title-font font-medium text-lg text-gray-900">Pankaj Verma</h2>
-            <h3 class="text-gray-500 mb-3">Coordinator</h3>
+            <h3 class="text-gray-500 mb-3">Backend And Database</h3>
             <span class="inline-flex">
               <a class="text-gray-500">
                 <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
@@ -67,7 +64,7 @@ class Team extends Component {
         <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
           <div class="flex-grow sm:pl-8">
             <h2 class="title-font font-medium text-lg text-gray-900">Ankit Joshi</h2>
-            <h3 class="text-gray-500 mb-3">Database Developer</h3>
+            <h3 class="text-gray-500 mb-3">Database</h3>
             <span class="inline-flex">
               <a class="text-gray-500">
                 <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
@@ -92,7 +89,7 @@ class Team extends Component {
         <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
           <div class="flex-grow sm:pl-8">
             <h2 class="title-font font-medium text-lg text-gray-900">Rahul Sharma</h2>
-            <h3 class="text-gray-500 mb-3">Backend Developer</h3>
+            <h3 class="text-gray-500 mb-3">Backend</h3>
             <span class="inline-flex">
               <a class="text-gray-500">
                 <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">

@@ -12,7 +12,6 @@ class EmbeddedVideo extends Component {
                 <center><iframe width="600" height="515" src="https://www.youtube.com/embed/pGzIicX3NOQ"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe></center>
-                <center><Button variant="primary">Access The Databse</Button></center>
             </Container>
         );
     }

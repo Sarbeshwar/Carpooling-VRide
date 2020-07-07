@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import Header from './Header';
 import {Form,Container,Button} from 'react-bootstrap';
 class SignUp extends Component {
     render() {
         return (
             <div>
-                <Header></Header>
                 <Container>
                     <Form>
                         <Form.Group controlId="formBasicName">

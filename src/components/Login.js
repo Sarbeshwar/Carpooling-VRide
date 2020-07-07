@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
-import Header from './Header';
 class Login extends Component {
     render() {
         return (
             <div>
-                <Header></Header>
                 <Container>
                     <Form>
                         <Form.Group controlId="formBasicEmail">

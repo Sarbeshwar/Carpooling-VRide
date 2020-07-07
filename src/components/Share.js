@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import {Container,Button,Form} from 'react-bootstrap';
-import Header from './Header';
+import { Container, Button, Form } from 'react-bootstrap';
 import Map from './Map';
 class Share extends Component {
     render() {
         return (
             <div>
-                <Header></Header>
+
                 <Map></Map>
                 <Container>
                     <Form>
