@@ -3,4 +3,6 @@ Frontend-
 FrontEnd Complete-Technologies Used-ReactJs,Bootstrap,Tailwind CSS
 GeoLocation Functionality added-Only Coordinates are visible, Location not accessible due to billing issues.
 Backend-
-API For Share-Your-Vehicle Form is complete, integration is being worked on. The Database is fetched and can be accessed on console, but some issues while rendering so for the time being the Availabel Database Table is Hard Coded.
+API For Share-Your-Vehicle Form is complete, integration is being worked on. 
+The Database is fetched and can be accessed on console.
+But some issues while rendering so for the time being the Availabel Database Table is Hard Coded.
