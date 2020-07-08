@@ -18,6 +18,7 @@ public class ShareController {
 
     @PostMapping("/user")
     public ShareVehicle save(@RequestBody ShareVehicle Obj) {
+        System.out.println(Obj);
         service.save(Obj);
         return Obj;
     }
