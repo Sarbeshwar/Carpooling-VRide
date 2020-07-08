@@ -25,28 +25,28 @@ class App extends Component {
 			<div>
 				<BrowserRouter>
 					<Route exact path="/Login">
-					<Header setShareObject={this.setShareObject} />
+						<Header />
 						<Login />
 					</Route>
 					<Route exact path="/">
-						<Header setShareObject={this.setShareObject} />
+						<Header />
 						<EmbeddedVideo />
 					</Route>
 					<Route exact path="/Signup">
-					<Header setShareObject={this.setShareObject} />
+						<Header />
 						<SignUp></SignUp>
 					</Route>
 					<Route exact path="/Share">
-					<Header setShareObject={this.setShareObject} />
+						<Header />
 						<Share></Share>
 					</Route>
 					<Route exact path="/Team">
-					<Header setShareObject={this.setShareObject} />
+						<Header />
 						<Team></Team>
 					</Route>
 					<Route exact path="/Share_Vehicle_Database">
-						<Header setShareObject={this.setShareObject} />
-						<Share_Vehicle_Table shareObj={this.state.shareObj}></Share_Vehicle_Table>
+						<Header />
+						<Share_Vehicle_Table ></Share_Vehicle_Table>
 					</Route>
 				</BrowserRouter>
 				<Footer></Footer>
@@ -54,12 +54,6 @@ class App extends Component {
 		);
 	}
 
-	setShareObject = (shareObj) => {
-
-		this.setState({
-			shareObj: shareObj
-		});
-	}
 }
 
 export default App;

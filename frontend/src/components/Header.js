@@ -25,7 +25,7 @@ class Header extends Component {
                             <Nav.Link><Link to="/Signup">Signup</Link></Nav.Link>
                             <Nav.Link><Link to="/Share">Share Your Vehicle</Link></Nav.Link>
                             <Nav.Link><Link to="/Team">Our Team</Link></Nav.Link>
-                            <Nav.Link><Link onClick={this.getData} to="/Share_Vehicle_Database">Available Database</Link></Nav.Link>
+                            <Nav.Link><Link to="/Share_Vehicle_Database">Available Database</Link></Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
@@ -33,18 +33,6 @@ class Header extends Component {
         );
     }
 
-    getData = async () => {
-        console.log("Working");
-        const url = 'http://localhost:1003/api/userdetails';
-        const res = await fetch(url)
-        await res.json()
-            .then((shareObj) => {
-                console.log(shareObj);
-                this.props.setShareObject(shareObj);
-                // this.setState({ 'shareObj': shareObj });
-            });
-
-    }
 }
 
 export default Header;

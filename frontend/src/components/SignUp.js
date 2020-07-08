@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import {Form,Container,Button} from 'react-bootstrap';
+import { Form, Container, Button } from 'react-bootstrap';
+
 class SignUp extends Component {
+
     render() {
         return (
             <div>
@@ -15,7 +17,7 @@ class SignUp extends Component {
                             <Form.Control name="email" type="email" placeholder="Enter email" required />
                             <Form.Text className="text-muted">
                                 We'll never share your email with anyone else.
-    </Form.Text>
+                            </Form.Text>
                         </Form.Group>
                         <Form.Group controlId="formBasicPassword">
                             <Form.Label>Password</Form.Label>
@@ -23,7 +25,7 @@ class SignUp extends Component {
                         </Form.Group>
                         <Button variant="primary" type="submit">
                             Submit
-</Button>
+                        </Button>
                     </Form>
                 </Container>
             </div>
