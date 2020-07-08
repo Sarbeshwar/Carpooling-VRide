@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import Team from './components/Team';
 import Share_Vehicle_Table from './components/Share_Vehicle_Table';
 
+
 class App extends Component {
 
 	constructor() {
@@ -27,6 +28,7 @@ class App extends Component {
 					<Route exact path="/Login">
 						<Header />
 						<Login />
+						
 					</Route>
 					<Route exact path="/">
 						<Header />
@@ -34,20 +36,21 @@ class App extends Component {
 					</Route>
 					<Route exact path="/Signup">
 						<Header />
-						<SignUp></SignUp>
+						<SignUp />
 					</Route>
 					<Route exact path="/Share">
 						<Header />
-						<Share></Share>
+						<Share />
 					</Route>
 					<Route exact path="/Team">
 						<Header />
-						<Team></Team>
+						<Team />
 					</Route>
 					<Route exact path="/Share_Vehicle_Database">
 						<Header />
-						<Share_Vehicle_Table ></Share_Vehicle_Table>
+						<Share_Vehicle_Table />
 					</Route>
+					
 				</BrowserRouter>
 				<Footer></Footer>
 			</div>

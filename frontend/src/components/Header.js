@@ -16,10 +16,10 @@ class Header extends Component {
             <div>
                 <Navbar expand="lg">
                     <Navbar.Brand><img src={image} alt="logo"></img></Navbar.Brand>
+                    <h3>CarPOOL</h3>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="mr-auto">
-                            <Nav.Link>CarPOOL</Nav.Link>
+                        <Nav className="ml-auto">
                             <Nav.Link><Link to="/">Home</Link></Nav.Link>
                             <Nav.Link><Link to="/Login">Login</Link></Nav.Link>
                             <Nav.Link><Link to="/Signup">Signup</Link></Nav.Link>
