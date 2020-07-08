@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Button, Card } from 'react-bootstrap';
+import { Container, Button} from 'react-bootstrap';
 class EmbeddedVideo extends Component {
     render() {
         return (
