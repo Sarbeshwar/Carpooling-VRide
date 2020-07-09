@@ -14,7 +14,10 @@ class Share_Vehicle_Table extends Component {
   render() {
     // console.log("Received shareObj");
     // console.log(this.state.shareObj);
+    console.log("State");
     console.log(this.state);
+    console.log("Props");
+    console.log(this.props);
     return (
       <Table responsive>
         <thead>
@@ -53,24 +56,17 @@ class Share_Vehicle_Table extends Component {
     }
   }
 
-  componentDidUpdate() {
-    if (this.props.searchResults) {
-      this.searchDestination();
-    } else {
-      this.getData();
-    }
-  }
-
   searchDestination = async () => {
     let url = 'http://localhost:1003/api/destination/' + this.state.searchTerm;
 
     const res = await fetch(url);
 
     await res.json()
-      .then((shareObj) => {
-        // this.setState({ shareObj: shareObj });
-        console.log(shareObj);
-    })
+      .then((searchResults) => {
+        this.setState({ shareObj: searchResults });
+        console.log(searchResults);
+        this.forceUpdate();
+      })
   }
 
   getData = async () => {
@@ -116,9 +112,17 @@ class Share_Vehicle_Table extends Component {
 
   }
 
+  componentDidUpdate() {
+    if (this.state.shareObj.length > 0 && this.state.searchTerm !== this.state.shareObj[0].destination) {
+
+      if (this.props.searchResults)
+        this.searchDestination();
+    }
+  }
+
   static getDerivedStateFromProps(newProps, oldState) {
-    if(newProps.searchTerm !== oldState.searchTerm) {
-      return {searchTerm: newProps.searchTerm};
+    if (newProps.searchTerm !== oldState.searchTerm) {
+      return { searchTerm: newProps.searchTerm };
     }
   }
 }

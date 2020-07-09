@@ -40,7 +40,7 @@ class Header extends Component {
                                         name="searchTerm"
                                         onChange={this.handleSearchInput}
                                     />
-                                    <Button variant="outline-success" onClick={this.searchDestination}>Search</Button>
+                                    <Button variant="primary" onClick={this.searchDestination}>Search</Button>
                                 </Form>
                             </Nav>
                         </Navbar.Collapse>
@@ -71,7 +71,7 @@ class Header extends Component {
                                         name="searchTerm"
                                         onChange={this.handleSearchInput}
                                     />
-                                    <Button variant="outline-success" onClick={this.searchDestination}>Search</Button>
+                                    <Button variant="primary" onClick={this.searchDestination}>Search</Button>
                                 </Form>
                                 <p>Logged in as {sessionStorage.getItem('username')}!</p>
                                 <Nav.Link onClick={this.signOut}>Signout</Nav.Link>
@@ -103,7 +103,7 @@ class Header extends Component {
                                         name="searchTerm"
                                         onChange={this.handleSearchInput}
                                     />
-                                    <Button variant="outline-success" onClick={this.searchDestination}>Search</Button>
+                                    <Button variant="primary" onClick={this.searchDestination}>Search</Button>
                                 </Form>
                                 <p>Logged in as {sessionStorage.getItem('username')}!</p>
                                 <Nav.Link onClick={this.signOut}>Signout</Nav.Link>
@@ -132,7 +132,7 @@ class Header extends Component {
 
     searchDestination = () => {
         if (this.state.searchTerm.length > 0) {
-            console.log('searchDest called');
+            // console.log('searchDest called');
             console.log(this.state.searchTerm);
             this.props.setSearchTerm(this.state.searchTerm);
             this.props.history.push('/searchResults');
