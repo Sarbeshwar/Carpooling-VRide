@@ -22,10 +22,12 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+
     public User() {
         super();
         // TODO Auto-generated constructor stub
     }
+
     public User(@NotNull(message = "Please enter the name") String name,
                 @Email @NotNull(message = "Please enter the Email") String email_address,
                 @Size(min = 5) String password) {
