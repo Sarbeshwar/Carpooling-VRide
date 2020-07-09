@@ -1,15 +1,13 @@
 package com.example.demo.Repository;
 
-import java.util.List;
-
-import javax.persistence.EntityManager;
-
+import com.example.demo.Entity.ShareVehicle;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.Entity.ShareVehicle;
+import javax.persistence.EntityManager;
+import java.util.List;
 
 @Repository
 public class ShareRepoimpl implements ShareRepo {
@@ -46,5 +44,6 @@ public class ShareRepoimpl implements ShareRepo {
         currentSession.delete(Obj);
 
     }
+
 
 }

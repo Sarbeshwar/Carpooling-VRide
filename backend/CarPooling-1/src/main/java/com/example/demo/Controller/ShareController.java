@@ -1,12 +1,11 @@
 package com.example.demo.Controller;
 
-import java.util.List;
-
+import com.example.demo.Entity.ShareVehicle;
+import com.example.demo.Service.Share;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import com.example.demo.Entity.ShareVehicle;
-import com.example.demo.Service.Share;
+import java.util.List;
 
 @RestController
 @CrossOrigin
@@ -28,14 +27,23 @@ public class ShareController {
         return service.get();
     }
 
-    @GetMapping("/user/{Name}")
-    public ShareVehicle get(@PathVariable String Name) {
-        ShareVehicle Obj = service.get(Name);
+    @GetMapping("/destination/{destination}")
+    public ShareVehicle get(@PathVariable String destination) {
+        ShareVehicle Obj = service.get(destination);
         if (Obj == null) {
-            throw new RuntimeException("User not found for the Name:" + Name);
+            throw new RuntimeException("No entry found for the destination :" + destination);
         }
         return Obj;
     }
+
+//    @GetMapping("/user/destination/{destination}")
+//    public ShareVehicle getFromDestination(@PathVariable String destination) {
+//        ShareVehicle Obj = service.getFromDestination(destination);
+//        if (Obj == null) {
+//            throw new RuntimeException("User not found for the Name:" + Name);
+//        }
+//        return Obj;
+//    }
 
     @PutMapping("/user")
     public ShareVehicle update(@RequestBody ShareVehicle Obj) {

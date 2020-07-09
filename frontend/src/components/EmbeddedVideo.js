@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Button} from 'react-bootstrap';
+import { Container, Button, Card } from 'react-bootstrap';
 class EmbeddedVideo extends Component {
     render() {
         return (
@@ -54,9 +54,9 @@ class EmbeddedVideo extends Component {
     </div>
   </div>
 </section>
-                <center><iframe width="600" height="515" src="https://www.youtube.com/embed/pGzIicX3NOQ"
+                {/* <center><iframe width="600" height="515" src="https://www.youtube.com/embed/pGzIicX3NOQ"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe></center>
+                    allowfullscreen></iframe></center> */}
             </Container>
         );
     }

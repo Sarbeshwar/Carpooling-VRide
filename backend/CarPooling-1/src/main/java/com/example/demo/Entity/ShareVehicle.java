@@ -5,13 +5,15 @@ import javax.persistence.Id;
 
 @Entity
 public class ShareVehicle {
-   @Id
+
     String Name;
     String Cartype;
     String Starttime;
     String Returntime;
     String origin;
+    @Id
     String Destination;
+    String phonenumber;
 
     public ShareVehicle() {
         super();
@@ -21,7 +23,7 @@ public class ShareVehicle {
     @Override
     public String toString() {
         return "ShareVehicle [Name=" + Name + ", Cartype=" + Cartype + ", Starttime=" + Starttime + ", Returntime="
-                + Returntime + ", origin=" + origin + ", Destination=" + Destination + "]";
+                + Returntime + ", origin=" + origin + ", Destination=" + Destination + ", phonenumber=" + phonenumber + "]";
     }
 
     public String getName() {
@@ -72,4 +74,12 @@ public class ShareVehicle {
         Destination = destination;
     }
 
+
+    public String getPhonenumber() {
+        return phonenumber;
+    }
+
+    public void setPhonenumber(String phonenumber) {
+        this.phonenumber = phonenumber;
+    }
 }

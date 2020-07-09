@@ -12,7 +12,8 @@ class Share extends Component {
             starttime: '',
             returntime: '',
             origin: '',
-            destination: ''
+            destination: '',
+            phonenumber: ''
         }
     }
 
@@ -21,7 +22,7 @@ class Share extends Component {
             <div>
                 <Map></Map>
                 <Container>
-                    <Form>
+                    <Form id="riderDetails">
                         <Form.Group controlId="formBasicName">
                             <Form.Label>Name</Form.Label>
                             <Form.Control name="name" type="text" placeholder="Enter Name" onChange={this.handleInput} required />
@@ -45,6 +46,10 @@ class Share extends Component {
                         <Form.Group controlId="formBasicDestination">
                             <Form.Label>Destination</Form.Label>
                             <Form.Control name="destination" type="text" placeholder="Destination" onChange={this.handleInput} required />
+                        </Form.Group>
+                        <Form.Group controlId="phonenumber">
+                            <Form.Label>Phone Number</Form.Label>
+                            <Form.Control name="phonenumber" type="text" placeholder="Phone Number" onChange={this.handleInput} required />
                         </Form.Group>
                         <Button variant="primary" type="button" onClick={this.sendFormVals}>Submit</Button>
                     </Form>
@@ -95,6 +100,7 @@ class Share extends Component {
             .then(() => alert("Data saved successfully!"))
             .catch(() => alert("Some issue occurred"))
 
+        document.getElementById("riderDetails").reset();
     }
 }
 

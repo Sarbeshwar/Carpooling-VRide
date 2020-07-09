@@ -1,14 +1,12 @@
 package com.example.demo.Service;
 
-import java.util.List;
-
+import com.example.demo.Entity.ShareVehicle;
+import com.example.demo.Repository.ShareRepo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.demo.Entity.ShareVehicle;
-import com.example.demo.Repository.ShareRepo;
+import java.util.List;
 
 @Service
 public class ShareService implements Share {
@@ -39,5 +37,13 @@ public class ShareService implements Share {
     public void delete(String Name) {
         sr.delete(Name);
     }
+
+//    public ShareVehicle getFromDestination(String destination) {
+//        ShareVehicle Obj = sr.getFromDestination(destination);
+//        if (Obj == null) {
+//            throw new RuntimeException("User not found for the Name:" + Name);
+//        }
+//        return Obj;
+//    }
 
 }

@@ -4,10 +4,12 @@ import ReactDOM from 'react-dom';
 import './assets/main.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import AdminLogin from './components/AdminComponents/AdminLogin';
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    {/* <AdminLogin/> */}
   </React.StrictMode>,
   document.getElementById('root')
 );
