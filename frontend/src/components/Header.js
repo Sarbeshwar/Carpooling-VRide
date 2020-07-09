@@ -59,10 +59,9 @@ class Header extends Component {
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="ml-auto">
                                 <Nav.Link><Link to="/">Home</Link></Nav.Link>
-                                {/* <Nav.Link><Link to="/Share">Share Your Vehicle</Link></Nav.Link> */}
                                 <Nav.Link><Link to="/">Update your profile</Link></Nav.Link>
                                 <Nav.Link><Link to="/Team">About Us</Link></Nav.Link>
-                                <Nav.Link><Link to="/Share_Vehicle_Database">Available Database</Link></Nav.Link>
+                                <Nav.Link><Link to="/Share_Vehicle_Database">View all Rides</Link></Nav.Link>
                                 <Form inline>
                                     <FormControl
                                         type="text"
@@ -73,11 +72,11 @@ class Header extends Component {
                                     />
                                     <Button variant="primary" onClick={this.searchDestination}>Search</Button>
                                 </Form>
-                                <p>Logged in as {sessionStorage.getItem('username')}!</p>
-                                <Nav.Link onClick={this.signOut}>Signout</Nav.Link>
+                                <Button variant="danger" onClick={this.signOut}>Sign out</Button>
                             </Nav>
                         </Navbar.Collapse>
                     </Navbar>
+                    <p style={{ float: 'right', marginRight: 20, fontWeight: 900 }}>Logged in as {sessionStorage.getItem('username')}</p>
                 </div>
             );
 
@@ -94,7 +93,7 @@ class Header extends Component {
                                 <Nav.Link><Link to="/">Home</Link></Nav.Link>
                                 <Nav.Link><Link to="/Share">Add Vehicle</Link></Nav.Link>
                                 <Nav.Link><Link to="/Team">About Us</Link></Nav.Link>
-                                <Nav.Link><Link to="/Share_Vehicle_Database">Available Database</Link></Nav.Link>
+                                <Nav.Link><Link to="/Share_Vehicle_Database">View all Rides</Link></Nav.Link>
                                 <Form inline>
                                     <FormControl
                                         type="text"
@@ -105,11 +104,11 @@ class Header extends Component {
                                     />
                                     <Button variant="primary" onClick={this.searchDestination}>Search</Button>
                                 </Form>
-                                <p>Logged in as {sessionStorage.getItem('username')}!</p>
-                                <Nav.Link onClick={this.signOut}>Signout</Nav.Link>
+                                <Button variant="danger" onClick={this.signOut}>Sign out</Button>
                             </Nav>
                         </Navbar.Collapse>
                     </Navbar>
+                    <p style={{ float: 'right', marginRight: 20, fontWeight: 900 }}>Logged in as {sessionStorage.getItem('username')}</p>
                 </div>
             );
 
@@ -133,7 +132,7 @@ class Header extends Component {
     searchDestination = () => {
         if (this.state.searchTerm.length > 0) {
             // console.log('searchDest called');
-            console.log(this.state.searchTerm);
+            // console.log(this.state.searchTerm);
             this.props.setSearchTerm(this.state.searchTerm);
             this.props.history.push('/searchResults');
         }

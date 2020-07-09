@@ -48,7 +48,7 @@ class Login extends Component {
             let name = 'admin@admin.com';
             let pass = 'admin';
 
-            console.log(this.state);
+            // console.log(this.state);
 
             if (name == this.state.email && pass == this.state.password) {
                 console.log("Logged in as admin");
@@ -82,11 +82,18 @@ class Login extends Component {
         });
 
         await res.json()
-            .then(() => {
-                alert("Logged in successfully!");
-                sessionStorage.setItem('loginStatus', 'user');
-                sessionStorage.setItem('username', 'Pankaj');
-                this.props.history.push('/');
+            .then((res) => {
+                // console.log(res);
+                if (res.name === "null") {
+                    alert("Invalid credentials");
+
+                } else {
+                    // alert("Logged in successfully!");
+                    sessionStorage.setItem('loginStatus', 'user');
+                    sessionStorage.setItem('username', res.name);
+                    this.props.history.push('/');
+                }
+
             })
             .catch(() => alert("Invalid credentials"))
 

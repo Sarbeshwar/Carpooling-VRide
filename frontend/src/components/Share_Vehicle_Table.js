@@ -14,10 +14,10 @@ class Share_Vehicle_Table extends Component {
   render() {
     // console.log("Received shareObj");
     // console.log(this.state.shareObj);
-    console.log("State");
-    console.log(this.state);
-    console.log("Props");
-    console.log(this.props);
+    // console.log("State");
+    // console.log(this.state);
+    // console.log("Props");
+    // console.log(this.props);
     return (
       <Table responsive>
         <thead>
@@ -64,7 +64,7 @@ class Share_Vehicle_Table extends Component {
     await res.json()
       .then((searchResults) => {
         this.setState({ shareObj: searchResults });
-        console.log(searchResults);
+        // console.log(searchResults);
         this.forceUpdate();
       })
   }
