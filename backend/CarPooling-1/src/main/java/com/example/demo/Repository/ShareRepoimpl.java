@@ -52,6 +52,7 @@ public class ShareRepoimpl implements ShareRepo {
                 currentSession.createQuery("select s from ShareVehicle s WHERE s.Destination = :Destination", ShareVehicle.class)
                         .setParameter("Destination", Destination);
         List<ShareVehicle> list = query.getResultList();
+        System.out.println(list);
         return list;
     }
 

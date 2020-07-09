@@ -5,19 +5,27 @@ import javax.persistence.Id;
 
 @Entity
 public class ShareVehicle {
-
+    @Id
+    int id;
     String Name;
     String Cartype;
     String Starttime;
     String Returntime;
     String origin;
-    @Id
     String Destination;
     String phonenumber;
 
     public ShareVehicle() {
         super();
         // TODO Auto-generated constructor stub
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override
