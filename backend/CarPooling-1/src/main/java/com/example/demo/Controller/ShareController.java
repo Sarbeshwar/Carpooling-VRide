@@ -27,23 +27,11 @@ public class ShareController {
         return service.get();
     }
 
-    @GetMapping("/destination/{destination}")
-    public ShareVehicle get(@PathVariable String destination) {
-        ShareVehicle Obj = service.get(destination);
-        if (Obj == null) {
-            throw new RuntimeException("No entry found for the destination :" + destination);
-        }
-        return Obj;
+    @GetMapping("/destination/{Destination}")
+    public List<ShareVehicle> get(@PathVariable String Destination) {
+        List<ShareVehicle> shareVehicleList = service.getUsingDestination(Destination);
+        return shareVehicleList;
     }
-
-//    @GetMapping("/user/destination/{destination}")
-//    public ShareVehicle getFromDestination(@PathVariable String destination) {
-//        ShareVehicle Obj = service.getFromDestination(destination);
-//        if (Obj == null) {
-//            throw new RuntimeException("User not found for the Name:" + Name);
-//        }
-//        return Obj;
-//    }
 
     @PutMapping("/user")
     public ShareVehicle update(@RequestBody ShareVehicle Obj) {
@@ -54,6 +42,6 @@ public class ShareController {
     @DeleteMapping("/user/{Name}")
     public String delete(@PathVariable String Name) {
         service.delete(Name);
-        return "User has been deleted with Nmae:" + Name;
+        return "User has been deleted with Name:" + Name;
     }
 }

@@ -1,8 +1,8 @@
 package com.example.demo.Service;
 
-import java.util.List;
-
 import com.example.demo.Entity.ShareVehicle;
+
+import java.util.List;
 
 public interface Share {
     List<ShareVehicle> get();
@@ -12,4 +12,6 @@ public interface Share {
     void save(ShareVehicle sv);
 
     void delete(String Name);
+
+    List<ShareVehicle> getUsingDestination(String Destination);
 }

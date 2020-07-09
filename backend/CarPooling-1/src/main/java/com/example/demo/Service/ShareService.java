@@ -38,12 +38,9 @@ public class ShareService implements Share {
         sr.delete(Name);
     }
 
-//    public ShareVehicle getFromDestination(String destination) {
-//        ShareVehicle Obj = sr.getFromDestination(destination);
-//        if (Obj == null) {
-//            throw new RuntimeException("User not found for the Name:" + Name);
-//        }
-//        return Obj;
-//    }
+    @Override
+    public List<ShareVehicle> getUsingDestination(String Destination) {
+        return sr.getUsingDestination(Destination);
+    }
 
 }

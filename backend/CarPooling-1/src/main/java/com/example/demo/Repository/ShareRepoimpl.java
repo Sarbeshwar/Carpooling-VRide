@@ -45,5 +45,15 @@ public class ShareRepoimpl implements ShareRepo {
 
     }
 
+    @Override
+    public List<ShareVehicle> getUsingDestination(String Destination) {
+        Session currentSession = em.unwrap(Session.class);
+        Query<ShareVehicle> query =
+                currentSession.createQuery("select s from ShareVehicle s WHERE s.Destination = :Destination", ShareVehicle.class)
+                        .setParameter("Destination", Destination);
+        List<ShareVehicle> list = query.getResultList();
+        return list;
+    }
+
 
 }

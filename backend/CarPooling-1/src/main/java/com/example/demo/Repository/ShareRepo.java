@@ -13,6 +13,6 @@ public interface ShareRepo {
 
     void delete(String Name);
 
-//    @Query("SELECT s FROM Share s WHERE s.Destination = :destination")
-//    public ShareVehicle getFromDestination(@Param("destination") String destination);
+    List<ShareVehicle> getUsingDestination(String Destination);
+
 }
