@@ -52,7 +52,15 @@ public class ShareRepoimpl implements ShareRepo {
                 currentSession.createQuery("select s from ShareVehicle s WHERE s.Destination = :Destination", ShareVehicle.class)
                         .setParameter("Destination", Destination);
         List<ShareVehicle> list = query.getResultList();
-        System.out.println(list);
+
+        if (list.size() == 0) {
+            ShareVehicle dummyObj = new ShareVehicle();
+            dummyObj.setId(-1);             // To indicate it to the Frontend
+            dummyObj.setDestination(Destination);
+            list.add(dummyObj);
+        }
+
+        System.out.println("getUsingDestination : " + list);
         return list;
     }
 

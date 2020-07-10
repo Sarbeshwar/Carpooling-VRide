@@ -6,4 +6,6 @@ public interface UserRepository {
 
     User login(User user);
 
+    boolean signUp(User user);
+
 }

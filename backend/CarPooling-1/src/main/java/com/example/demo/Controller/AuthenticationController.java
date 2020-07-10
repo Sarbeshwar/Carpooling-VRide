@@ -4,8 +4,11 @@ import com.example.demo.Entity.User;
 import com.example.demo.Repository.UserRepository;
 import com.example.demo.config.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
 
 @RestController
 @CrossOrigin
@@ -35,7 +38,20 @@ public class AuthenticationController {
 //        return ResponseEntity.ok().body(user);
         return ResponseEntity.ok().body(userInDB);
     }
-//
+
+    //
+    @PostMapping("/signUp")
+    public ResponseEntity<HashMap<String, String>> signUp(@RequestBody User user) {
+        System.out.println(user);
+        HashMap<String, String> response = new HashMap<>();
+        if (ur.signUp(user)) {
+            response.put("status", "Signup successful, you can login into your account now");
+            return new ResponseEntity<>(response, HttpStatus.CREATED);
+        } else {
+            response.put("status", "Could not register");
+            return new ResponseEntity<>(response, HttpStatus.FOUND);
+        }
+    }
 //    @PostMapping("/employees/create")
 //    public User createEmployee(@Valid @RequestBody User user) {
 //        return ur.save(user);
