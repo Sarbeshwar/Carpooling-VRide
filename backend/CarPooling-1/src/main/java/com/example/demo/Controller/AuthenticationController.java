@@ -52,6 +52,15 @@ public class AuthenticationController {
             return new ResponseEntity<>(response, HttpStatus.FOUND);
         }
     }
+
+    @PostMapping("/update")
+    public ResponseEntity<User> update(@RequestBody User user) {
+        System.out.println("To update in DB:\n" + user);
+
+        User response = ur.update(user);
+
+        return ResponseEntity.ok().body(response);
+    }
 //    @PostMapping("/employees/create")
 //    public User createEmployee(@Valid @RequestBody User user) {
 //        return ur.save(user);

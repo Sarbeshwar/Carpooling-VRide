@@ -8,4 +8,6 @@ public interface UserRepository {
 
     boolean signUp(User user);
 
+    User update(User user);
+
 }

@@ -83,7 +83,7 @@ class Login extends Component {
 
         await res.json()
             .then((res) => {
-                // console.log(res);
+                console.log(res);
                 if (res.name === "null") {
                     alert("Invalid credentials");
 
@@ -91,6 +91,7 @@ class Login extends Component {
                     // alert("Logged in successfully!");
                     sessionStorage.setItem('loginStatus', 'user');
                     sessionStorage.setItem('username', res.name);
+                    sessionStorage.setItem('email', res.email_address);
                     this.props.history.push('/');
                 }
 
