@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import Team from './components/Team';
 import Share_Vehicle_Table from './components/Share_Vehicle_Table';
 import UpdateProfile from './components/UpdateProfile';
+import UsersTable from './components/UsersTable';
 
 class App extends Component {
 
@@ -29,6 +30,10 @@ class App extends Component {
 		return (
 			<div>
 				<BrowserRouter>
+				<Route exact path="/Users_Database">
+						<Header setSearchTerm={this.setSearchTerm} />
+						<UsersTable />
+					</Route>
 					<Route exact path="/Login">
 						<Header setSearchTerm={this.setSearchTerm} />
 						<Login />

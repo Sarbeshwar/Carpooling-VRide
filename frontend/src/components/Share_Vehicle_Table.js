@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Table, Button } from 'react-bootstrap';
-
+import { Link } from 'react-router-dom';
 class Share_Vehicle_Table extends Component {
 
 	constructor(props) {
@@ -24,6 +24,7 @@ class Share_Vehicle_Table extends Component {
 		// console.log("Props");
 		// console.log(this.props);
 		return (
+			<div>
 			<Table responsive>
 				<thead>
 					<tr>
@@ -50,6 +51,15 @@ class Share_Vehicle_Table extends Component {
 					}
 				</tbody>
 			</Table>
+
+{/* <footer class="text-gray-700 body-font"> */}
+<div class="bg-gray-200">
+  <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+	  <center><h5>In order to get your vehicle listed contact:- Admin <Link to="/Team">@Our Team</Link></h5></center>
+  </div>
+</div>
+{/* </footer> */}
+</div>
 		);
 	}
 

@@ -41,7 +41,7 @@ class UpdateProfile extends Component {
                             <Form.Control
                                 name="password"
                                 type="password"
-                                placeholder="Enter new Password"
+                                placeholder="Enter Current Password"
                                 onChange={this.handleInput}
                                 required
                             />
@@ -49,6 +49,7 @@ class UpdateProfile extends Component {
                         <Button variant="primary" type="button" onClick={this.sendVals}>
                             Update
                         </Button>
+                        <p>You can update your email,name by verifying your current password.</p>
                     </Form>
                 </Container>
             </div>
