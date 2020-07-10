@@ -10,6 +10,7 @@ import Share from './components/Share';
 import Footer from './components/Footer';
 import Team from './components/Team';
 import Share_Vehicle_Table from './components/Share_Vehicle_Table';
+import UpdateProfile from './components/UpdateProfile';
 
 class App extends Component {
 
@@ -35,6 +36,10 @@ class App extends Component {
 					<Route exact path="/">
 						<Header setSearchTerm={this.setSearchTerm} />
 						<EmbeddedVideo />
+					</Route>
+					<Route exact path="/UpdateProfile">
+						<Header setSearchTerm={this.setSearchTerm} />
+						<UpdateProfile></UpdateProfile>
 					</Route>
 					<Route exact path="/Signup">
 						<Header setSearchTerm={this.setSearchTerm} />

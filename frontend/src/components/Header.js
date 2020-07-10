@@ -5,7 +5,6 @@ import image from "./car.png";
 import './Header.css';
 //import 'bootstrap/dist/css/bootstrap.min.css';
 import { Form, FormControl, Button, Nav, Navbar } from 'react-bootstrap';
-
 class Header extends Component {
 
     constructor(props) {
@@ -59,7 +58,7 @@ class Header extends Component {
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="ml-auto">
                                 <Nav.Link><Link to="/">Home</Link></Nav.Link>
-                                <Nav.Link><Link to="/">Update your profile</Link></Nav.Link>
+                                <Nav.Link><Link to="/UpdateProfile">Update your profile</Link></Nav.Link>
                                 <Nav.Link><Link to="/Team">About Us</Link></Nav.Link>
                                 <Nav.Link><Link to="/Share_Vehicle_Database">View all Rides</Link></Nav.Link>
                                 <Form inline>
