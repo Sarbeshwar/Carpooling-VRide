@@ -41,7 +41,7 @@ class UpdateProfile extends Component {
                             <Form.Control
                                 name="password"
                                 type="password"
-                                placeholder="Enter Current Password"
+                                placeholder="Enter current Password"
                                 onChange={this.handleInput}
                                 required
                             />

@@ -15,7 +15,7 @@ class SignUp extends Component {
         return (
             <div>
                 <Container>
-                    <Form>
+                    <Form id="signupform">
                         <Form.Group controlId="formBasicName">
                             <Form.Label>Name</Form.Label>
                             <Form.Control name="name" type="text" placeholder="Enter Name" onChange={this.handleInput} required />
@@ -31,7 +31,7 @@ class SignUp extends Component {
                             <Form.Label>Password</Form.Label>
                             <Form.Control name="password" type="password" placeholder="Password" onChange={this.handleInput} required />
                         </Form.Group>
-                        <Button variant="primary" type="submit" onClick={this.sendSignupDetails}>
+                        <Button variant="primary" type="button" onClick={this.sendSignupDetails}>
                             Submit
                         </Button>
                     </Form>
@@ -92,7 +92,7 @@ class SignUp extends Component {
             })
             .catch(() => alert("Some issue occurred"))
 
-        // document.getElementById("riderDetails").reset();
+        document.getElementById("signupform").reset();
     }
 }
 export default SignUp;

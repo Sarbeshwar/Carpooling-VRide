@@ -40,7 +40,7 @@ class Team extends Component {
         <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
           <div class="flex-grow sm:pl-8">
             <h2 class="title-font font-medium text-lg text-gray-900">Pankaj Verma</h2>
-            <h3 class="text-gray-500 mb-3">Admin</h3>
+            <h3 class="text-gray-500 mb-3">Admin and JavaScript</h3>
             <span class="inline-flex">
               <a class="text-gray-500">
                 <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
