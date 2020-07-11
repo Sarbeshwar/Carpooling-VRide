@@ -38,9 +38,9 @@ public class ShareRepoimpl implements ShareRepo {
     }
 
     @Override
-    public void delete(int id) {
+    public void delete(String Name) {
         Session currentSession = em.unwrap(Session.class);
-        ShareVehicle Obj = currentSession.get(ShareVehicle.class, id);
+        ShareVehicle Obj = currentSession.get(ShareVehicle.class, Name);
         currentSession.delete(Obj);
 
     }

@@ -60,8 +60,9 @@ public class UserRepositoryImpl implements UserRepository {
 
         System.out.println("Checking if user exists in DB or not");
 
-        Query<User> query = currentSession.createQuery("select u from User u WHERE u.Email_address = :Email AND u.Password = :Password", User.class);
+        Query<User> query = currentSession.createQuery("select u from User u WHERE (u.Email_address = :Email OR u.id = :id) AND u.Password = :Password", User.class);
         query.setParameter("Email", user.getEmail_address());
+        query.setParameter("id", user.getId());
         query.setParameter("Password", user.getPassword());
         List<User> list = query.getResultList();
 //        System.out.println(list);
@@ -80,7 +81,16 @@ public class UserRepositoryImpl implements UserRepository {
             else
                 return new User("null", "null", "null");
 
-        } else
+        } else {
+            System.out.println("User DNE");
             return new User("null", "null", "null");
+        }
+    }
+
+    public List<User> get() {
+        Session currentSession = em.unwrap(Session.class);
+        Query<User> query = currentSession.createQuery("from User", User.class);
+        List<User> list = query.getResultList();
+        return list;
     }
 }

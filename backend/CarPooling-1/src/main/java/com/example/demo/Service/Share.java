@@ -11,7 +11,7 @@ public interface Share {
 
     void save(ShareVehicle sv);
 
-    void delete(int id);
+    void delete(String Name);
 
     List<ShareVehicle> getUsingDestination(String Destination);
 }

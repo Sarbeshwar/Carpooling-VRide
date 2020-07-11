@@ -39,9 +39,9 @@ public class ShareController {
         return Obj;
     }
 
-    @DeleteMapping("/user/{id}")
-    public String delete(@PathVariable int id) {
-        service.delete(id);
-        return "User has been deleted with Name:" + id;
+    @DeleteMapping("/user/{Name}")
+    public String delete(@PathVariable String Name) {
+        service.delete(Name);
+        return "User has been deleted with Name:" + Name;
     }
 }

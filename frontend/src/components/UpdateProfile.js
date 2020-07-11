@@ -4,6 +4,7 @@ class UpdateProfile extends Component {
     constructor() {
         super();
         this.state = {
+            userid: sessionStorage.getItem("userid"),
             name: sessionStorage.getItem("username"),
             email: sessionStorage.getItem("email"),
             password: ''
@@ -92,6 +93,7 @@ class UpdateProfile extends Component {
         const res = await fetch(url, {
             method: 'POST',
             body: JSON.stringify({
+                id: this.state.userid,
                 name: this.state.name,
                 email_address: this.state.email,
                 password: this.state.password

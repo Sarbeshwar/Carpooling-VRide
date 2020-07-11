@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.List;
 
 @RestController
 @CrossOrigin
@@ -40,6 +41,12 @@ public class AuthenticationController {
     }
 
     //
+
+    @GetMapping("/signUpInfo")
+    public List<User> get() {
+        return ur.get();
+    }
+
     @PostMapping("/signUp")
     public ResponseEntity<HashMap<String, String>> signUp(@RequestBody User user) {
         System.out.println(user);

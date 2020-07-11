@@ -90,6 +90,7 @@ class Login extends Component {
                 } else {
                     // alert("Logged in successfully!");
                     sessionStorage.setItem('loginStatus', 'user');
+                    sessionStorage.setItem('userid', res.id);
                     sessionStorage.setItem('username', res.name);
                     sessionStorage.setItem('email', res.email_address);
                     this.props.history.push('/');
