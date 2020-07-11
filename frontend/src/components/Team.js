@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 class Team extends Component {
     render() { 
         return (
@@ -9,10 +10,10 @@ class Team extends Component {
       <h1 class="text-2xl font-medium title-font mb-4 text-gray-900 tracking-widest">OUR TEAM</h1>
       <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Many ideas grow better when transplanted into another mind than the one where they sprang up</p>
     </div>
-    <div class="flex flex-wrap -m-4">
-      <div class="p-4 lg:w-1/2">
-        <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
-          <div class="flex-grow sm:pl-8">
+    <div class="flex flex-wrap -m-4" >
+      <div class="p-4 lg:w-1/2" >
+        <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left" > 
+          <div class="flex-grow sm:pl-8" >
             <h2 class="title-font font-medium text-lg text-gray-900">Sarbeshwar Singh</h2>
             <h3 class="text-gray-500 mb-3">Frontend</h3>
             
