@@ -34,8 +34,8 @@ public class ShareService implements Share {
 
     @Transactional
     @Override
-    public void delete(String Name) {
-        sr.delete(Name);
+    public void delete(int id) {
+        sr.delete(id);
     }
 
     @Override
