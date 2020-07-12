@@ -45,10 +45,7 @@ public class UserRepositoryImpl implements UserRepository {
         query.setParameter(2, email);
         query.setParameter(3, password);
 
-        if (query.executeUpdate() > 0)
-            return true;
-        else
-            return false;
+        return query.executeUpdate() > 0;
     }
 
     @Transactional
@@ -85,6 +82,14 @@ public class UserRepositoryImpl implements UserRepository {
             System.out.println("User DNE");
             return new User("null", "null", "null");
         }
+    }
+
+    @Transactional
+    public void delete(long id) {
+        Session currentSession = em.unwrap(Session.class);
+        User Obj = currentSession.get(User.class, id);
+        System.out.println(Obj);
+        currentSession.delete(Obj);
     }
 
     public List<User> get() {

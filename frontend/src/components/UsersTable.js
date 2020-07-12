@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Table } from 'react-bootstrap';
+import { Table, Button } from 'react-bootstrap';
 class UsersTable extends Component {
     constructor(props) {
         super(props);
@@ -12,10 +12,11 @@ class UsersTable extends Component {
         return (
             <div>
                 <Table responsive>
-                    <thead style={{ textAlign: 'center' }}> 
+                    <thead style={{ textAlign: 'center' }}>
                         <tr>
                             <th>Name</th>
                             <th>Email</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody style={{ textAlign: 'center' }}>
@@ -56,9 +57,37 @@ class UsersTable extends Component {
             <tr key={`tableDataRow${index}`}>
                 <td>{row.name}</td>
                 <td>{row.email_address}</td>
+                <td><Button variant="danger"
+                    type="button"
+                    onClick={() => this.delete(row.id)}>Delete</Button>
+                </td>
             </tr>
 
         );
+
+    }
+
+    delete = async (id) => {
+        const url = 'http://localhost:1003/api/delete/' + id;
+
+        const res = await fetch(url, {
+            method: 'DELETE',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        })
+        await res.json()
+            .then((res) => {
+                console.log(res);
+                if (res === true) {
+                    let updatedUserData = this.state.shareObj.filter(row => row.id !== id);
+                    this.setState({ shareObj: updatedUserData });
+                    alert("Data deleted successfully");
+                } else {
+                    alert("Something went wrong, could not delete the entry");
+                }
+            });
 
     }
 }

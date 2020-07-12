@@ -145,7 +145,6 @@ class Share_Vehicle_Table extends Component {
 	showContactNumber = (e, phonenumber) => {
 		if (sessionStorage.getItem('loginStatus') === 'false') {
 			e.target.innerHTML = '**********';
-
 			alert('Please login to view the contact number');
 
 		} else {

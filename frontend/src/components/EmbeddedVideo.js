@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Container } from 'react-bootstrap';
 import "./EmbeddedVideo.css";
-
 class EmbeddedVideo extends Component {
   render() {
     return (
@@ -16,8 +15,8 @@ class EmbeddedVideo extends Component {
               <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">The VRide Advantage</h1>
               <p class="lg:w-1/2 w-full leading-relaxed text-base">We simplified car rentals, so you can focus on what's important to you.</p>
             </div>
-            <div class="flex flex-wrap -m-4" >
-              <div class="xl:w-1/3 md:w-1/2 p-4" >
+            <div class="flex flex-wrap -m-4">
+              <div class="xl:w-1/3 md:w-1/2 p-4">
                 <div class="border border-gray-300 p-6 rounded-lg" id="forColor">
                   <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Fuel Cost Included</h2>
                   <p class="leading-relaxed text-base">Don't worry about fuel! All fuel costs are included.</p>
