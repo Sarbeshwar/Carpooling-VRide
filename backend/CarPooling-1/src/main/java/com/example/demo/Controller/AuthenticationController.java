@@ -73,18 +73,6 @@ public class AuthenticationController {
 //        return ur.save(user);
 //    }
 //
-//    @PutMapping("/employees/update/{Email_address}")
-//    public ResponseEntity<User> updateEmployee(@PathVariable(value = "Email_address") String Email_address,
-//                                               @Valid @RequestBody User userDetails) throws ResourceNotFoundException {
-//        User user = ur.findById(Email_address).orElseThrow(() -> new ResourceNotFoundException("Employee not found for this email :: " + Email_address));
-//        user.setName(userDetails.getName());
-//        user.setEmail_address(userDetails.getEmail_address());
-//        user.setPassword(userDetails.getPassword());
-//        user.setId(userDetails.getId());
-//        final User updatedUser = ur.save(user);
-//        return ResponseEntity.ok(updatedUser);
-//    }
-//
 //    @DeleteMapping("/employees/delete/{Email_address}")
 //    public Map<String, Boolean> deleteUser(@PathVariable(value = "Email_address") String Email_address)
 //            throws ResourceNotFoundException {
