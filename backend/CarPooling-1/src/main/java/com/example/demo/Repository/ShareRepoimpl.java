@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Repository
@@ -37,10 +38,10 @@ public class ShareRepoimpl implements ShareRepo {
 
     }
 
-    @Override
-    public void delete(String Name) {
+    @Transactional
+    public void delete(int id) {
         Session currentSession = em.unwrap(Session.class);
-        ShareVehicle Obj = currentSession.get(ShareVehicle.class, Name);
+        ShareVehicle Obj = currentSession.get(ShareVehicle.class, id);
         currentSession.delete(Obj);
 
     }

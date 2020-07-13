@@ -11,7 +11,7 @@ public interface ShareRepo {
 
     void save(ShareVehicle sv);
 
-    void delete(String Name);
+    void delete(int id);
 
     List<ShareVehicle> getUsingDestination(String Destination);
 

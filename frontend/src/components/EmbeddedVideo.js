@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import { Container } from 'react-bootstrap';
-import "./EmbeddedVideo.css";
+import './EmbeddedVideo.css';
 class EmbeddedVideo extends Component {
   render() {
     return (
       <Container>
         <center>
-          <h3 id="forColorOut">VRide Is A Simple Carpooling Application Developed Inorder To Take A
+          <h3>VRide Is A Simple Carpooling Application Developed Inorder To Take A
                 Step Towards A Better Environment</h3>
         </center>
         <section class="text-gray-700 body-font">
           <div class="container px-5 py-24 mx-auto">
-            <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center" >
+            <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
               <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">The VRide Advantage</h1>
               <p class="lg:w-1/2 w-full leading-relaxed text-base">We simplified car rentals, so you can focus on what's important to you.</p>
             </div>
