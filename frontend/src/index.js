@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import './assets/main.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
+import Payment from './components/Payment';
 ReactDOM.render(
   <React.StrictMode>
     <App/>

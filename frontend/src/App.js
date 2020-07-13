@@ -12,7 +12,7 @@ import Team from './components/Team';
 import Share_Vehicle_Table from './components/Share_Vehicle_Table';
 import UpdateProfile from './components/UpdateProfile';
 import UsersTable from './components/UsersTable';
-
+import Payment from './components/Payment';
 class App extends Component {
 
 	constructor() {
@@ -30,6 +30,10 @@ class App extends Component {
 		return (
 			<div>
 				<BrowserRouter>
+				<Route exact path="/Payment">
+						<Header setSearchTerm={this.setSearchTerm} />
+						<Payment />
+					</Route>
 				<Route exact path="/Users_Database">
 						<Header setSearchTerm={this.setSearchTerm} />
 						<UsersTable />

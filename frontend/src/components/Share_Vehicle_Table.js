@@ -36,6 +36,7 @@ class Share_Vehicle_Table extends Component {
 								<th>Origin</th>
 								<th>Destination</th>
 								<th>Phone Number</th>
+								<th>Payment</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -46,7 +47,7 @@ class Share_Vehicle_Table extends Component {
 									)
 									: (
 										<tr>
-											<td colSpan={7} style={{ textAlign: 'center' }}>No Rider is heading towards your location, Please check after some time</td>
+											<td colSpan={8} style={{ textAlign: 'center' }}>No Rider is heading towards your location, Please check after some time</td>
 										</tr>
 									)
 							}
@@ -76,7 +77,7 @@ class Share_Vehicle_Table extends Component {
 								<th>Origin</th>
 								<th>Destination</th>
 								<th>Phone Number</th>
-								<th></th>
+								<th>Delete Vehicle</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -172,6 +173,9 @@ class Share_Vehicle_Table extends Component {
 						>
 							Contact
         				</Button>
+					</td>
+					<td>
+					<Link to="/Payment"><Button variant="primary" type="button">Book</Button></Link>
 					</td>
 				</tr>
 			);

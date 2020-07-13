@@ -16,7 +16,7 @@ class UsersTable extends Component {
                         <tr>
                             <th>Name</th>
                             <th>Email</th>
-                            <th></th>
+                            <th>Delete User</th>
                         </tr>
                     </thead>
                     <tbody style={{ textAlign: 'center' }}>
@@ -27,7 +27,7 @@ class UsersTable extends Component {
                                 )
                                 : (
                                     <tr>
-                                        <td colSpan={2} style={{ textAlign: 'center' }}>No Registered User</td>
+                                        <td colSpan={3} style={{ textAlign: 'center' }}>No Registered User</td>
                                     </tr>
                                 )
                         }
