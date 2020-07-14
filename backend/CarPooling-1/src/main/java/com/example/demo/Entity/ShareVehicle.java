@@ -14,6 +14,7 @@ public class ShareVehicle {
     String origin;
     String Destination;
     String phonenumber;
+    int price;
 
     public ShareVehicle() {
         super();
@@ -31,7 +32,7 @@ public class ShareVehicle {
     @Override
     public String toString() {
         return "ShareVehicle [Name=" + Name + ", Cartype=" + Cartype + ", Starttime=" + Starttime + ", Returntime="
-                + Returntime + ", origin=" + origin + ", Destination=" + Destination + ", phonenumber=" + phonenumber + "]";
+                + Returntime + ", origin=" + origin + ", Destination=" + Destination + ", phonenumber=" + phonenumber + ", Price=" +price+ "]";
     }
 
     public String getName() {
@@ -89,5 +90,13 @@ public class ShareVehicle {
 
     public void setPhonenumber(String phonenumber) {
         this.phonenumber = phonenumber;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 }

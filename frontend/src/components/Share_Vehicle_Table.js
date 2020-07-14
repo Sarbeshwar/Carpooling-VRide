@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Table, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router';
 class Share_Vehicle_Table extends Component {
 
 	constructor(props) {
@@ -35,6 +36,7 @@ class Share_Vehicle_Table extends Component {
 								<th>ReturnTime</th>
 								<th>Origin</th>
 								<th>Destination</th>
+								<th>Price</th>
 								<th>Phone Number</th>
 								<th>Payment</th>
 							</tr>
@@ -47,7 +49,7 @@ class Share_Vehicle_Table extends Component {
 									)
 									: (
 										<tr>
-											<td colSpan={8} style={{ textAlign: 'center' }}>No Rider is heading towards your location, Please check after some time</td>
+											<td colSpan={9} style={{ textAlign: 'center' }}>No Rider is heading towards your location, Please check after some time</td>
 										</tr>
 									)
 							}
@@ -76,6 +78,7 @@ class Share_Vehicle_Table extends Component {
 								<th>ReturnTime</th>
 								<th>Origin</th>
 								<th>Destination</th>
+								<th>Price</th>
 								<th>Phone Number</th>
 								<th>Delete Vehicle</th>
 							</tr>
@@ -88,7 +91,7 @@ class Share_Vehicle_Table extends Component {
 									)
 									: (
 										<tr>
-											<td colSpan={8} style={{ textAlign: 'center' }}>No Rider is heading towards your location, Please check after some time</td>
+											<td colSpan={9} style={{ textAlign: 'center' }}>No Rider is heading towards your location, Please check after some time</td>
 										</tr>
 									)
 							}
@@ -165,6 +168,7 @@ class Share_Vehicle_Table extends Component {
 					<td>{row.returntime}</td>
 					<td>{row.origin}</td>
 					<td>{row.destination}</td>
+					<td>{row.price}</td>
 					<td>
 						<Button
 							variant="primary"
@@ -175,19 +179,29 @@ class Share_Vehicle_Table extends Component {
         				</Button>
 					</td>
 					<td>
-					<Link to="/Payment"><Button variant="primary" type="button">Book</Button></Link>
+						{
+							sessionStorage.getItem('loginStatus') === 'false'
+								? (<Button variant="secondary" type="button" onClick={() => alert('Please login in order to make payments.')}>Book</Button>)
+								// : (<Link to="/Payment"><Button variant="primary" type="button">Book</Button></Link>)
+								:(<Button variant="primary" type="button" onClick={() => this.sendPrice(row.price)}>Book</Button>)
+
+						}
 					</td>
 				</tr>
 			);
 		} else {
 			return (
 				<tr>
-					<td colSpan={7} style={{ textAlign: 'center' }}>No Rider is heading towards your location, Please check after some time</td>
+					<td colSpan={9} style={{ textAlign: 'center' }}>No Rider is heading towards your location, Please check after some time</td>
 				</tr>
 			);
 		}
 	}
 
+	sendPrice =(price) => {
+		this.props.setPrice(price);
+		this.props.history.push('/Payment');
+	}
 	renderDynamicTableDataAdmin = (row, index) => {
 		if (row.id > 0) {
 			return (
@@ -198,6 +212,7 @@ class Share_Vehicle_Table extends Component {
 					<td>{row.returntime}</td>
 					<td>{row.origin}</td>
 					<td>{row.destination}</td>
+					<td>{row.price}</td>
 					<td>
 						<Button
 							variant="primary"
@@ -220,48 +235,48 @@ class Share_Vehicle_Table extends Component {
 		} else {
 			return (
 				<tr>
-					<td colSpan={8} style={{ textAlign: 'center' }}>No Rider is heading towards your location, Please check after some time</td>
+					<td colSpan={9} style={{ textAlign: 'center' }}>No Rider is heading towards your location, Please check after some time</td>
 				</tr>
 			);
 		}
 	}
 
 	delete = async (id) => {
-        const url = 'http://localhost:1003/api/vehicleDelete/' + id;
+		const url = 'http://localhost:1003/api/vehicleDelete/' + id;
 
-        const res = await fetch(url, {
-            method: 'DELETE',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            }
-        })
-        await res.json()
-            .then((res) => {
-                console.log(res);
-                if (res === true) {
-                    let updatedUserData = this.state.shareObj.filter(row => row.id !== id);
-                    this.setState({ shareObj: updatedUserData });
-                    alert("Data deleted successfully");
-                } else {
-                    alert("Something went wrong, could not delete the entry");
-                }
-            });
-
-    }
-		
-		showContactNumber = (e, phonenumber) => {
-			if (sessionStorage.getItem('loginStatus') === 'false') {
-				e.target.innerHTML = '**********';
-				alert('Please login to view the contact number');
-
-			} else {
-				e.target.innerHTML = phonenumber;
+		const res = await fetch(url, {
+			method: 'DELETE',
+			headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/json'
 			}
-
-		}
-
+		})
+		await res.json()
+			.then((res) => {
+				console.log(res);
+				if (res === true) {
+					let updatedUserData = this.state.shareObj.filter(row => row.id !== id);
+					this.setState({ shareObj: updatedUserData });
+					alert("Data deleted successfully");
+				} else {
+					alert("Something went wrong, could not delete the entry");
+				}
+			});
 
 	}
 
-	export default Share_Vehicle_Table;
+	showContactNumber = (e, phonenumber) => {
+		if (sessionStorage.getItem('loginStatus') === 'false') {
+			e.target.innerHTML = '**********';
+			alert('Please login to view the contact number');
+
+		} else {
+			e.target.innerHTML = phonenumber;
+		}
+
+	}
+
+
+}
+
+export default withRouter(Share_Vehicle_Table);

@@ -51,6 +51,10 @@ class Share extends Component {
                             <Form.Label>Phone Number</Form.Label>
                             <Form.Control name="phonenumber" type="text" placeholder="Phone Number" onChange={this.handleInput} required />
                         </Form.Group>
+                        <Form.Group controlId="price">
+                            <Form.Label>Price</Form.Label>
+                            <Form.Control name="price" type="text" placeholder="Amount Till Destination" onChange={this.handleInput} required />
+                        </Form.Group>
                         <Button variant="primary" type="button" onClick={this.sendFormVals}>Submit</Button>
                     </Form>
                 </Container>

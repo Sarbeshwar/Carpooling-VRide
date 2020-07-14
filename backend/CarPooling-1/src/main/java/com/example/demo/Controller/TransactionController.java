@@ -13,19 +13,19 @@ public class TransactionController {
     @Autowired
     private TransationS service;
 
-    @PostMapping("/post")
+    @PostMapping("/sendTransData")
     public Transactions save(@RequestBody Transactions ts)
     {
         System.out.println(ts);
         service.save(ts);
         return ts;
     }
-    @GetMapping("/Get")
+    @GetMapping("/GettransDetails")
     public List<Transactions> get() {
 
         return service.get();
     }
-    @DeleteMapping("/Delete/{id}")
+    @DeleteMapping("/Deletetrans/{id}")
     public boolean delete(@PathVariable int id) {
         try {
             service.delete(id);

@@ -13,13 +13,15 @@ import Share_Vehicle_Table from './components/Share_Vehicle_Table';
 import UpdateProfile from './components/UpdateProfile';
 import UsersTable from './components/UsersTable';
 import Payment from './components/Payment';
+import Transactions from './components/Transactions';
 class App extends Component {
 
 	constructor() {
 		super();
 		this.state = {
 			shareObj: null,
-			searchTerm: ''
+			searchTerm: '',
+			price: ''
 		}
 	}
 
@@ -32,8 +34,12 @@ class App extends Component {
 				<BrowserRouter>
 				<Route exact path="/Payment">
 						<Header setSearchTerm={this.setSearchTerm} />
-						<Payment />
+						<Payment price={this.state.price} />
 					</Route>
+				<Route exact path ="/Transactions">
+						<Header setSearchTerm={this.setSearchTerm} />
+						<Transactions />
+				</Route>
 				<Route exact path="/Users_Database">
 						<Header setSearchTerm={this.setSearchTerm} />
 						<UsersTable />
@@ -64,11 +70,11 @@ class App extends Component {
 					</Route>
 					<Route exact path="/Share_Vehicle_Database">
 						<Header setSearchTerm={this.setSearchTerm} />
-						<Share_Vehicle_Table searchResults={false} searchTerm={this.state.searchTerm}></Share_Vehicle_Table>
+						<Share_Vehicle_Table searchResults={false} setPrice={this.setPrice} searchTerm={this.state.searchTerm}></Share_Vehicle_Table>
 					</Route>
 					<Route exact path="/searchResults">
 						<Header setSearchTerm={this.setSearchTerm} />
-						<Share_Vehicle_Table searchResults={true} searchTerm={this.state.searchTerm}></Share_Vehicle_Table>
+						<Share_Vehicle_Table searchResults={true} setPrice={this.setPrice} searchTerm={this.state.searchTerm}></Share_Vehicle_Table>
 					</Route>
 				</BrowserRouter>
 				<Footer></Footer>
@@ -81,6 +87,10 @@ class App extends Component {
 			searchTerm: searchTerm
 		});
 		
+	}
+
+	setPrice =(price) => {
+		this.setState({price: price});
 	}
 
 }

@@ -91,9 +91,10 @@ class Header extends Component {
                             <Nav className="ml-auto">
                                 <Nav.Link><Link to="/">Home</Link></Nav.Link>
                                 <Nav.Link><Link to="/Share">Add Vehicle</Link></Nav.Link>
-                                <Nav.Link><Link to="/Team">About Us</Link></Nav.Link>
                                 <Nav.Link><Link to="/Users_Database">Users</Link></Nav.Link>
+                                <Nav.Link><Link to="/Transactions">User Transactions</Link></Nav.Link>
                                 <Nav.Link><Link to="/Share_Vehicle_Database">View all Rides</Link></Nav.Link>
+                                <Nav.Link><Link to="/Team">About Us</Link></Nav.Link>
                                 <Form inline>
                                     <FormControl
                                         type="text"
