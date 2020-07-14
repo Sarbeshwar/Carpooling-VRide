@@ -30,9 +30,10 @@ CREATE TABLE `share_vehicle` (
   `Returntime` varchar(25) DEFAULT NULL,
   `origin` varchar(25) DEFAULT NULL,
   `Destination` varchar(20) DEFAULT NULL,
+  `price` int(11) NOT NULL,
   `phonenumber` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,8 +42,33 @@ CREATE TABLE `share_vehicle` (
 
 LOCK TABLES `share_vehicle` WRITE;
 /*!40000 ALTER TABLE `share_vehicle` DISABLE KEYS */;
-INSERT INTO `share_vehicle` VALUES (1,'rahul','sharma','21','22','rahul','pass',''),(2,'Pankaj','SUV','10:00 AM','11:00 PM','Nalagarh','Shimla',''),(3,'Ankit','Rider','10:00 ','12:00','BAddi','Ludhiana',''),(4,'Sarbi','Rider','1:00','2:00','Mohali','Delhi',''),(5,'Ritik','LMV','14','15','Nalagarh','Hyderabad','7894561230'),(6,'Sarthak','SUV','11','12','Kalka','Hyderabad',' 80 477068');
+INSERT INTO `share_vehicle` VALUES (2,'Pankaj','SUV','10:00 AM','11:00 PM','Nalagarh','Shimla',2000,'7412589036'),(3,'Ankit','Rider','10:00 ','12:00','BAddi','Ludhiana',4000,'3062159847'),(4,'Sarbi','Rider','1:00','2:00','Mohali','Delhi',5000,'1594870263'),(5,'Ritik','LMV','14','15','Nalagarh','Hyderabad',15000,'7894561230'),(8,'karan','LMV','14:00','15:00','chandigarh','Pakistan',100000,'7546123890');
 /*!40000 ALTER TABLE `share_vehicle` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `transactions`
+--
+
+DROP TABLE IF EXISTS `transactions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `transactions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `transactionid` int(11) NOT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `transactions`
+--
+
+LOCK TABLES `transactions` WRITE;
+/*!40000 ALTER TABLE `transactions` DISABLE KEYS */;
+INSERT INTO `transactions` VALUES (1,3,'pankaj'),(5,4561,'Rahul'),(6,1234,'Rahul'),(7,2232,'Rahul');
+/*!40000 ALTER TABLE `transactions` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -53,12 +79,12 @@ DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `Name` varchar(20) DEFAULT NULL,
-  `Email_address` varchar(20) DEFAULT NULL,
+  `Email_address` varchar(40) DEFAULT NULL,
   `Password` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -67,7 +93,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'Rahul','Rahul@gmail.com','123456');
+INSERT INTO `user` VALUES (1,'Rahul','Rahul@gmail.com','123456'),(2,'Pankaj','pankajn@gmail.com','pankaj268'),(8,'Ankit','ankit@gmail.com','12345');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -80,4 +106,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-07-10  0:48:28
+-- Dump completed on 2020-07-14 22:05:49
